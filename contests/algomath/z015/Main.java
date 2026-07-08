@@ -8,15 +8,13 @@ public class Main {
 
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int answer = 0;
-        for (int i = 2; i <= a; i++) {
-            if (a % i == 0) {
-                if (b % (a / i) == 0) {
-                    answer = a / i;
-                    break;
-                }
-            }
+
+        while (b != 0) {
+            int remainder = a % b;
+            a = b;
+            b = remainder;
         }
-        System.out.println(answer);
+
+        System.out.println(a);
     }
 }
